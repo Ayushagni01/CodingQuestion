@@ -27,6 +27,8 @@ public class SingleLinkedList {
         second.next=third;
         Node fourth=new Node(30);
         third.next=fourth;
+        Node fifth=new Node(40);
+        fourth.next=fifth;
 
         //print the linkedlist using the iterative and non iterative approached
        // printListed(l.head);
@@ -48,7 +50,77 @@ public class SingleLinkedList {
         //delete a node in the linked list
         //deleteFirstNode(l.head);
         //delete at the end of the node
-        deleteAtTheEndOfLinkedList(l.head);
+        //deleteAtTheEndOfLinkedList(l.head);
+        //delete a node at the given positions
+        //deleteANodeAtTheGivenPosition(l.head, 2);
+        //search a node using recursions
+        //searchNode(l.head,290);
+        //reverseLinkedList(l.head);
+        //find the  middle node in the linked list
+        //finMiddleNode(l.head);
+        //find the nth node from the end
+        //findNthNode(l.head, 2);
+        //remove the duplicate element from the sorted  linked list
+
+    }
+    //find the nth node from the end
+    private static void findNthNode(Node head,int n) {
+    Node first=head;
+    Node second=head;
+    int c=0;
+    while(c<n)
+    {
+        c++;
+        first=first.next;
+    }
+
+    while (first!=null)
+    {
+        second=second.next;
+        first=first.next;
+    }
+    //5 10 20 30 40
+        System.out.println(second.data);
+    }
+
+    //find the middle node
+    public static void finMiddleNode(Node head){
+    Node slow=head;
+    Node fast=head;
+    while(fast!=null  && fast.next!=null){
+        slow=slow.next;
+        fast=fast.next.next;
+        }
+        System.out.println("The middle node is "+slow.data);
+    }
+
+    //Reverse a linked list here
+    public static void reverseLinkedList(Node head){
+        Node curr=head;
+        Node prev=null;
+        Node next=null;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+        printNode(head);
+    }
+
+    //search a node using the recursions
+    public static boolean searchNode(Node head,int data){
+        if(head==null){
+            System.out.println("Element not found at the locations");
+            return false;
+        }
+        if(head.data==data){
+            System.out.println("Element searched ");
+            return true;
+        }
+
+        return searchNode(head.next,data);
     }
 
     //delete the first node in the single list
@@ -84,7 +156,24 @@ public class SingleLinkedList {
     }
 
     //delete a node at the given positons
+    public static void deleteANodeAtTheGivenPosition(Node head,int position){
+        if(position==1){
+            System.out.println();
+            head=head.next;
+        }else{
+            int c=1;
+            Node curr=head;
+            while(c<position-1){
+                c++;
+                curr=curr.next;
+            }
+            //this is how we can delete the node
+            curr.next=curr.next.next;
+            printNode(head);
 
+
+        }
+    }
 
 
 
