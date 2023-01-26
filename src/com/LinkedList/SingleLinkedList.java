@@ -39,8 +39,9 @@ public class SingleLinkedList {
         //add the node in the begining of the node
        // addNodeatBegining(l.head,30);
        //insert node at the end of the linkedlist
-        insertNodeAtEnd(l.head,100);
-
+       // insertNodeAtEnd(l.head,100);
+        //insert data at the end
+        insertAtEndNode1(l.head, 120);
 
     }
     //insert a node in the linkedList
@@ -60,10 +61,30 @@ public class SingleLinkedList {
             prev=curr;
             curr=curr.next;
         }
-        System.out.println(prev.data);
+        prev.next=newNode;
+        //print the node here
+        printNode(head);
+    }
 
+    //another method to add the method at the end of the linkedlist
+    public static void insertAtEndNode1(Node head,int data){
+        if(head==null){
+            head=new Node(data);
+            return;
+        }
+        //if head is not null
+        if(head==null){
+            System.out.println("head is null");
+        }
+        Node curr=head;
+
+        while(null!=curr.next){
+            curr=curr.next;
+            System.out.println(curr.data);
+        }
 
     }
+
 
 
     //using loop

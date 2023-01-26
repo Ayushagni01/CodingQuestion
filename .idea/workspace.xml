@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3d9bd47-ff91-4552-9f88-627a37247a76" name="Default Changelist" comment="linkedlist node added">
+    <list default="true" id="e3d9bd47-ff91-4552-9f88-627a37247a76" name="Default Changelist" comment="Single linked List added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/LinkedList/SingleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/LinkedList/SingleLinkedList.java" afterDir="false" />
     </list>
@@ -140,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674701833481</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Single linked List added">
+      <created>1674707585924</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1674707585924</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code Needs to be committed" />
     <MESSAGE value="linkedlist node added" />
-    <option name="LAST_COMMIT_MESSAGE" value="linkedlist node added" />
+    <MESSAGE value="Single linked List added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Single linked List added" />
   </component>
 </project>
