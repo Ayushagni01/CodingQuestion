@@ -28,7 +28,9 @@ public class SingleLinkedList {
 
 
         //print the linkedlist using the iterative and non iterative approached
-        printListed(l.head);
+       // printListed(l.head);
+        //print the node using recursion
+        printNode(l.head);
 
     }
 
@@ -38,6 +40,18 @@ public class SingleLinkedList {
             System.out.println(head.data);
             head=head.next;
         }
+    }
+
+    public static Node printNode(Node head){
+
+        //base case
+        if(head==null)
+        {
+            return null;
+        }
+        System.out.print(head.data+"-->");
+        return printNode(head.next);
+
     }
 
 }
