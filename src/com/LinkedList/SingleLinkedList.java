@@ -25,7 +25,8 @@ public class SingleLinkedList {
         Node third=new Node(20);
         l.head.next=second;
         second.next=third;
-
+        Node fourth=new Node(30);
+        third.next=fourth;
 
         //print the linkedlist using the iterative and non iterative approached
        // printListed(l.head);
@@ -41,9 +42,34 @@ public class SingleLinkedList {
        //insert node at the end of the linkedlist
        // insertNodeAtEnd(l.head,100);
         //insert data at the end
-        insertAtEndNode1(l.head, 120);
-
+       // insertAtEndNode1(l.head, 120);
+        //insert a node at the given positions\
+        insertAtPosition(l.head,40,3);
     }
+
+    //insert a node at the given positions
+    public static void insertAtPosition(Node head,int data, int position){
+        Node new_Node =new Node(data);
+        if(position==1){
+            new_Node.next=head;
+            head=new_Node;
+        }else{
+                Node prev=null;
+                Node curr=head;
+                int c=1;
+                while(position-1>c){
+                    curr=curr.next;
+                    c++;
+                  //  System.out.println(curr.data);
+                }
+                new_Node.next=curr.next;
+                curr.next=new_Node;
+                printNode(head);
+
+
+        }
+    }
+
     //insert a node in the linkedList
     public static void addNodeatBegining(Node head,int data)
     {
