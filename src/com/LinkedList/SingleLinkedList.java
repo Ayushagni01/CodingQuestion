@@ -22,13 +22,13 @@ public class SingleLinkedList {
         SingleLinkedList l=new SingleLinkedList();
         l.head=new Node(5);
         Node second=new Node(10);
-        Node third=new Node(20);
+        Node third=new Node(10);
         l.head.next=second;
         second.next=third;
         Node fourth=new Node(30);
         third.next=fourth;
-        Node fifth=new Node(40);
-        fourth.next=fifth;
+        Node fifth=new Node(30);
+        fourth.next=second;
 
         //print the linkedlist using the iterative and non iterative approached
        // printListed(l.head);
@@ -61,8 +61,42 @@ public class SingleLinkedList {
         //find the nth node from the end
         //findNthNode(l.head, 2);
         //remove the duplicate element from the sorted  linked list
+        //removeDuplicateFromSortedAlgorithm(l.head);
+        //how to detect the loop in the linked list
+        System.out.println(detectTheLoopInLinkedList(l.head));
 
     }
+
+    private static boolean detectTheLoopInLinkedList(Node head) {
+        Node fast=head;
+        Node slow=head;
+        while(fast!=null && fast.next!=null)
+        {
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow){
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    //remove the duplicate element from the sorted algorithm
+    private static void removeDuplicateFromSortedAlgorithm(Node head) {
+        Node curr=head;
+        while(curr!=null && curr.next!=null){
+            if(curr.data==curr.next.data){
+                curr.next=curr.next.next;
+            }else{
+                curr=curr.next;
+            }
+        }
+        //display the linkedList
+        printNode(head);
+
+    }
+
     //find the nth node from the end
     private static void findNthNode(Node head,int n) {
     Node first=head;
